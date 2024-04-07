@@ -1,0 +1,28 @@
+{
+  "name": "GetGrass Auto Surfer",
+  "version": "0.2.0",
+  "manifest_version": 3,
+  "description": "getgrass-auto-surfer",
+  "homepage_url": "https://github.com/jericho1338/getgrass-auto-surfer",
+  "icons": {
+    "16": "icons/getgrass_16.png",
+    "48": "icons/getgrass_48.png",
+    "128": "icons/getgrass_128.png"
+  },
+  "default_locale": "en",
+  "permissions": ["storage"],
+  "content_scripts": [
+    {
+      "matches": ["https://*/*", "https://www.google.hr/*", "http://localhost:3000/*"],
+      "js": ["src/script/main.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["src/script/helpers.js"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "content_security_policy": {}
+}
