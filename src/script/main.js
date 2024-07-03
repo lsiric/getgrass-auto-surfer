@@ -5,15 +5,19 @@
     setInterval(() => {
       const url = generateGoogleUrl();
       window.open(url, "_blank");
-    }, 5000);
+    }, 90000);
   } else if (shouldClickGoogleResult()) {
-    clickGoogleResult();
+    try {   
+      clickGoogleResult(); 
+    } catch (error) {
+      console.log(error);
+    }
   } else {
     // else close window
     const closeTimer = setInterval(() => {
       clearInterval(closeTimer);
       window.close();
-    }, 4000);
+    }, 89000);
   }
 
   function clickGoogleResult() {
